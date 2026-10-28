@@ -144,7 +144,7 @@
 
 | Fichier | Contenu |
 |---|---|
-| `08_examen_preparation.ipynb` | 17 drills « papier » du DE avec corrigés pas-à-pas + vérification numérique (utilisé en S8) |
+| `08_examen_preparation.ipynb` | 15 drills « papier » du DE avec corrigés pas-à-pas + vérification numérique (utilisé en S8) |
 | `09_graphiques.ipynb` | 8 figures pédagogiques inline : TCL, descente de gradient, PCA, lois usuelles, Bayes, IC, sur-apprentissage, learning curves |
 
 ## Statut de vérification
