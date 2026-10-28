@@ -5,6 +5,9 @@ Contenu en français ; sorties pré-exécutées dans les `.ipynb` (aucune instal
 
 ## Notebooks
 
+Chaque notebook T01–T07 est organisé en **7 points** numérotés, chacun avec son
+**exercice corrigé Pn** intégré. Voir le détail dans [`PLAN_NOTEBOOKS.md`](PLAN_NOTEBOOKS.md).
+
 | # | Notebook | Contenu |
 |---|---|---|
 | 01 | `01_algebre_lineaire.ipynb` | Systèmes, rang/noyau, valeurs propres, SVD + eigendecomposition, Cholesky, PCA latente |
