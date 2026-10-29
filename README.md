@@ -17,8 +17,18 @@ Chaque notebook T01–T07 est organisé en **7 points** numérotés, chacun avec
 | 05 | `05_modelisation_statistique.ipynb` | TCL, estimation, IC, régression + régression bayésienne |
 | 06 | `06_tests_et_inference.ipynb` | Tests paramétriques/non paramétriques, ANOVA+Tukey, chi², bayésien |
 | 07 | `07_applications_datascience.ipynb` | Pipeline, k-fold, biais-variance, métriques, éthique |
-| 08 | `08_examen_preparation.ipynb` | 17 drills « papier » du DE avec corrigés pas-à-pas |
+| 08 | `08_examen_preparation.ipynb` | 15 drills « papier » du DE avec corrigés pas-à-pas |
 | 09 | `09_graphiques.ipynb` | 8 figures pédagogiques (TCL, GD, PCA, lois, Bayes, IC, sur-apprentissage, learning curves) |
+
+## Documents de référence (`docs/`)
+
+| Fichier | Contenu |
+|---|---|
+| `Syllabus_ADIF72-3.pdf` | Syllabus officiel du module ADIF72 (45 h) |
+| `70_concepts_mathematiques.pdf` | 70 concepts mathématiques essentiels pour la data science |
+
+> *Note : le livre MML (Deisenroth/Faisal/Ong) n'est pas inclus (droit d'auteur) ;*
+> *il est référencé dans les notebooks par ses chapitres (`*(MML ch. X.Y)*`).*
 
 ## Exécuter
 
