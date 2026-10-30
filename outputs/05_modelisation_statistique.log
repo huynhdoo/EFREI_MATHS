@@ -1,0 +1,59 @@
+
+======================================================================
+1. DISTRIBUTIONS D'ÉCHANTILLONNAGE
+======================================================================
+Population N(10.0,3.0) ; échantillons n=25
+Moyenne des Xbar = 10.0025  (≈ 10.0)
+SD des Xbar      = 0.6100  (≈ 0.6000)
+
+======================================================================
+2. THÉORÈME DE LA LIMITE CENTRALE
+======================================================================
+Tirages de la moyenne de 30 uniformes, standardisés
+  E[Z]  = -0.0209  (attendu 0)
+  Var[Z]= 1.0160  (attendu 1)
+  kurtosis (excès) = -0.0634  (normale: 0)
+  Shapiro-Wilk p = 0.507  (>0.05 => compatible normalité)
+
+======================================================================
+3. BIAS & VARIANCE D'UN ESTIMATEUR
+======================================================================
+Estimateur = moyenne (n=25) : bias=-0.0066, var=0.3621, MSE=0.3622
+Estimateur = 1er obs       : bias=-0.0220, var=9.0661, MSE=9.0666
+-> la moyenne est sans biais et bien moins variable (var/sigma^2 ≈ 0.0402 = 1/n)
+
+======================================================================
+4. INTERVALLES DE CONFIANCE
+======================================================================
+n=60, xbar=9.643, sigma connue=3.0
+IC 95% (normale)  : [8.884, 10.402]  contient mu? True
+
+IC 95% (t-Student, s inconnue=2.594): [9.475, 10.816]  contient mu? True
+  critique z=1.9600 vs t=2.0010 (t un peu plus large)
+
+======================================================================
+5. RÉGRESSION LINÉAIRE
+======================================================================
+pente estimée = 1.507 (vrai 1.5), ordonnée = 1.941 (vrai 2)
+R^2 = 0.9580   (1 = ajustement parfait)
+
+Régression multiple : coefs = [ 1.9749 -0.9953] (vrais [2,-1]), intercepte=0.495 (vrai 0.5)
+
+======================================================================
+6. CORRÉLATION & COEFFICIENT DE DÉTERMINATION
+======================================================================
+corr(A,B) = 0.643  (r^2=0.414)
+corr(A,C) = -0.207  (≈0 : indépendantes)
+Rappel : |r|≤1 ; r^2 = part de variance expliquée
+
+======================================================================
+EXERCICES CORRIGÉS
+======================================================================
+
+Ex1 : Xbar ~ N(5, 0.0400) ; sd(Xbar) = 0.2000
+Ex2 : xbar=50.90, s=2.132, tc=2.262 -> IC95=[49.375,52.425]
+Ex3 : P(Xbar>105) = 0.1587  (z = (105-100)/5.0 = 1)
+Ex4 : pente=1.600, ordonnée=1.100
+Ex5 : p-hat=0.700 -> IC95=[0.6551,0.7449]
+
+Tous les exercices du T05 sont vérifiés. ✅

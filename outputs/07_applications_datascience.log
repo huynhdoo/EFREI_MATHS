@@ -1,0 +1,70 @@
+
+======================================================================
+1. PIPELINE RÉGRESSION (prix de maison simulé)
+======================================================================
+RMSE = 31,396  (bruit ~30k)
+R²   = 0.9987  (≈1 : excellent ajustement)
+Coefs (données standardisées) = {'superficie': np.float64(870476.57), 'age': np.float64(-22643.728), 'nb_pieces': np.float64(11262.397)}
+
+======================================================================
+2. VALIDATION K-FOLD
+======================================================================
+Linéaire : R² moyen = 0.061 (±0.051)
+Arbre    : R² moyen = 0.960 (±0.009)
+Forêt    : R² moyen = 0.970 (±0.005)
+-> Le modèle trop simple (sous-apprend) vs l'arbre très flexible
+   (risque de sur-apprendre). La forêt = compromis biais/variance.
+  [Arbre profond (sur-apprend)] R² train (min->max) = 1.000 -> 1.000
+  [Arbre profond (sur-apprend)] R² val   (min->max) = 0.713 -> 0.960
+  [Arbre profond (sur-apprend)] écart train-val (indicateur de sur-apprentissage) croissant? False
+  [Arbre limité (meilleur)] R² train (min->max) = 0.986 -> 0.945
+  [Arbre limité (meilleur)] R² val   (min->max) = 0.692 -> 0.904
+  [Arbre limité (meilleur)] écart train-val (indicateur de sur-apprentissage) croissant? False
+
+======================================================================
+3. BIAIS-VARIANCE (polygone vs lissé)
+======================================================================
+Degré du polynôme -> R² train vs R² test :
+  degré  1 : R²_train=0.000  R²_test=-0.071  
+  degré  3 : R²_train=0.901  R²_test=0.917  
+  degré  8 : R²_train=0.971  R²_test=0.977  
+  degré 20 : R²_train=0.724  R²_test=0.692  
+-> Bas degré : sous-apprend (biais élevé). Haut degré :
+   sur-apprend (variance élevée). Le bon degré = compromis.
+
+======================================================================
+4. CLASSIFICATION (métriques + AUC)
+======================================================================
+Accuracy = 0.967  Précision = 0.947  Rappel = 0.982
+F1 = 0.964  AUC = 0.998
+
+Données déséquilibrées : Accuracy=0.977 (trompeuse !) mais F1=0.788
+-> En classe déséquilibrée, préférer F1 / AUC à l'accuracy.
+
+======================================================================
+5. BIAIS & ÉTHIQUE (détection d'un biais de données)
+======================================================================
+Modèle biaisé (entraîné sur x>0 seulement) : coef=-0.416
+Erreur sur la partie non vue (x<0) :
+  RMSE sur x<0 = 2.415
+Leçon : un échantillon non représentatif = biais systématique
+dans les prédictions, et risque de décisions injustes en inférence.
+
+======================================================================
+6. TABLEAU RÉCAPITULATIF
+======================================================================
+
+SITUATION                          -> MÉTHODE
+------------------------------------------------------------
+n grande, x ~ normale              -> tests paramétriques (z, t)
+n petit / données non normales     -> tests non paramétriques
+3+ groupes (moyennes)              -> ANOVA (+ Tukey post-hoc)
+indépendance (catégories)          -> chi-deux
+prédiction continue                -> régression (lin, arbre, forêt)
+prédiction binaire                 -> régression logistique / arbres
+données déséquilibrées             -> F1, AUC (pas l'accuracy)
+sur-apprentissage                  -> régularisation, plus de données
+biais d'échantillonnage            -> stratification, vérif couverture
+
+
+Tous les exercices du T07 sont vérifiés. ✅

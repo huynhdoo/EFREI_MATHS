@@ -1,0 +1,25 @@
+/home/huynhdoo/drive/SPARK/EFREI/MATHS/code/09_graphiques.py:236: UserWarning: linestyle is redundantly defined by the 'linestyle' keyword argument and the fmt string "s-" (-> linestyle='-'). The keyword argument will take precedence.
+  ax.plot(lc[0], vs, 's-', color=col, lw=2, ls='--', label=f'{name} — validation')
+/home/huynhdoo/drive/SPARK/EFREI/MATHS/code/09_graphiques.py:236: UserWarning: linestyle is redundantly defined by the 'linestyle' keyword argument and the fmt string "s-" (-> linestyle='-'). The keyword argument will take precedence.
+  ax.plot(lc[0], vs, 's-', color=col, lw=2, ls='--', label=f'{name} — validation')
+Fig 01 : TCL
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig01_tcl.png
+Fig 02 : Trajectoire de gradient descent
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig02_gd_trajectory.png
+Fig 03 : PCA
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig03_pca.png
+Fig 04 : Distributions
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig04_distributions.png
+Fig 05 : Bayes Bêta-Binomiale
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig05_bayes.png
+Fig 06 : Couverture IC
+  n=10 : couverture = 0.9470 (≈ 95%)
+  n=30 : couverture = 0.9540 (≈ 95%)
+  n=100 : couverture = 0.9530 (≈ 95%)
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig06_ic_coverage.png
+Fig 07 : Biais-variance
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig07_surapprentissage.png
+Fig 08 : Learning curves
+  -> /home/huynhdoo/drive/SPARK/EFREI/MATHS/outputs/fig08_learning_curves.png
+
+8 graphiques générés dans ./outputs/. ✅

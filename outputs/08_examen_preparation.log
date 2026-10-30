@@ -1,0 +1,245 @@
+
+======================================================================
+A1 · Système linéaire par élimination de Gauss (drill papier)
+======================================================================
+
+Énoncé : Résoudre  { 2x + y - z = 4
+                        x + 2y + z = 5
+                        x - y + 2z = 1
+Méthode papier : éliminer une inconnue à la fois, remonter (substitution).
+Corrigé :
+  (L1) - 2(L2) : -3y - 3z = -6  ->  y + z = 2           (I)
+  (L3) - (L2)  : -3y +  z = -4                    (II)
+  z = 2 - y  dans (II) : -3y + (2-y) = -4  ->  -4y = -6  ->  y = 1.5
+  z = 2 - 1.5 = 0.5
+  x depuis (L2) : x = 5 - 2(1.5) - 0.5 = 1.5
+  Solution : x=1.5, y=1.5, z=0.5
+
+Vérification Python : [1.5 1.5 0.5] -> (1.5, 1.5, 0.5)
+
+======================================================================
+A2 · Déterminant, inverse, matrice transposée (drill papier)
+======================================================================
+
+Énoncé : M = [[4, 2], [3, 1]]. Calculer det, M^-1, et vérifier M.M^-1 = I.
+Méthode : det(M) = 4*1 - 2*3 = -2
+         M^-1 = (1/det) * [[ d, -b ],[ -c, a ]] = (-1/2)[[1, -2],[-3, 4]]
+Corrigé : M^-1 = [[-0.5, 1], [1.5, -2]]
+
+Vérif Python : det=-2.0  M^-1=
+[[-0.5  1. ]
+ [ 1.5 -2. ]]
+
+======================================================================
+A3 · Produit matriciel 2x3 @ 3x2 (drill papier)
+======================================================================
+
+Énoncé : A = [[1,2,3],[4,5,6]], B = [[1,0],[0,1],[1,1]]. Calculer A@B.
+Méthode : (i,j) = somme des produits A[i,k]*B[k,j].
+Corrigé :
+  (1,1)=1*1+2*0+3*1=4   (1,2)=1*0+2*1+3*1=5
+  (2,1)=4*1+5*0+6*1=10  (2,2)=4*0+5*1+6*1=11
+
+Vérif Python :
+ [[ 4  5]
+ [10 11]]
+
+======================================================================
+A4 · Valeurs propres d'une 2x2 (drill papier)
+======================================================================
+
+Énoncé : P = [[3,1],[1,3]]. Trouver valeurs et vecteurs propres.
+Méthode : det(P - λI) = 0  ->  (3-λ)² - 1 = 0  ->  λ² - 6λ + 8 = 0
+         Δ = 36-32 = 4  ->  λ = (6±2)/2  =>  λ1=4, λ2=2
+Vecteurs propres :
+  λ1=4 : (P-4I)v=0 -> [[-1,1],[1,-1]]v=0 -> v1=(1,1)
+  λ2=2 : (P-2I)v=0 -> [[1,1],[1,1]]v=0  -> v2=(1,-1)
+
+Vérif Python : valeurs propres = [2. 4.]
+
+======================================================================
+A5 · Normes et angle (drill papier)
+======================================================================
+
+Énoncé : u=(2,1,2), v=(1,-1,1). Calculer ||u||, u·v, l'angle entre u et v.
+Méthode : ||u||=√(4+1+4)=3 ;  u·v=2-1+2=3 ;  cos θ = 3/(||u||·||v||)
+         ||v||=√3  ->  cos θ = 3/(3√3) = 1/√3  ->  θ = arccos(0.5774) ≈ 54.74°
+
+Vérif Python : angle = 54.74°
+
+======================================================================
+B1 · Dérivées et règles (drill papier)
+======================================================================
+
+Énoncé : f(x) = x⁴ + 3x² - 2x + 5. Trouver f'(x), f'(1), et le point
+         d'inflexion ? (f''(x)=0)
+Corrigé : f'(x) = 4x³ + 6x - 2
+          f'(1)  = 4+6-2 = 8
+          f''(x) = 12x² + 6  ->  f''(x) > 0 ∀x  ->  pas d'inflexion
+          (f est strictement convexe)
+
+Vérif Python : f'(1) = 8 ; f'' min = 6.011019283746556 > 0
+
+======================================================================
+B2 · Gradient et point critique (drill papier)
+======================================================================
+
+Énoncé : g(x,y) = x² + y² - 4x + 2y - 1. Trouver le point critique et
+         dire s'il est min/max/selle via le Hessian.
+Corrigé : ∇g = (2x-4, 2y+2) = 0  ->  x=2, y=-1
+         Hessian = [[2,0],[0,2]] (valeurs propres 2,2 > 0) -> MINIMUM
+         g(2,-1) = 4+1-8-2-1 = -6
+
+Vérif Python : gradient en (2,-1) = (0, 0) = (0,0) ; g(2,-1)=-6
+
+======================================================================
+B3 · Descente de gradient — pas 1 (drill papier)
+======================================================================
+
+Énoncé : f(x)=(x-3)², x0=0, α=0.5. Faire 2 pas de GD et donner f après.
+Méthode : f'(x)=2(x-3)
+          x1 = 0 - 0.5*2(0-3) = 0 + 3 = 3
+          x2 = 3 - 0.5*2(3-3) = 3   (on est déjà au minimum)
+          f(x1)=0, f(x2)=0
+
+Vérif Python : x1=3.0, x2=3.0, f=0.0, 0.0
+
+======================================================================
+B4 · Probabilité bayésienne (drill papier)
+======================================================================
+
+Énoncé : P(A)=0.4, P(B|A)=0.7, P(B|Aᶜ)=0.3. Calculer P(B) et P(A|B).
+Corrigé : P(B) = 0.7*0.4 + 0.3*0.6 = 0.28 + 0.18 = 0.46
+          P(A|B) = 0.28/0.46 ≈ 0.6087
+
+Vérif Python : P(B)=0.45999999999999996, P(A|B)=0.6087
+
+======================================================================
+B5 · Loi normale (drill papier)
+======================================================================
+
+Énoncé : X ~ N(μ=60, σ=10). Calculer P(50 < X < 70), P(X > 80), et le
+         percentile 95.
+Méthode : standardiser z = (x-μ)/σ
+          P(50<X<70) = Φ(1) - Φ(-1) = 2Φ(1)-1 ≈ 2(0.8413)-1 = 0.6826
+          P(X>80)    = 1-Φ(2) ≈ 1-0.9772 = 0.0228
+          P95       = μ + σ·z0.95 = 60 + 10(1.6449) = 76.45
+
+Vérif Python : P(50<X<70)=0.6827, P(X>80)=0.0228, P95=76.449
+
+======================================================================
+B6 · Loi binomiale (drill papier)
+======================================================================
+
+Énoncé : n=10 lancers, p=0.5. P(X=5) et P(X≥8).
+Méthode : P(X=k) = C(n,k) p^k (1-p)^(n-k)
+          P(X=5) = C(10,5)/2^10 = 252/1024 ≈ 0.2461
+          P(X≥8) = (C(10,8)+C(10,9)+C(10,10))/1024 = (45+10+1)/1024
+                 = 56/1024 ≈ 0.0547
+
+Vérif Python : P(X=5)=0.2461, P(X≥8)=0.0547
+
+======================================================================
+C1 · Moyenne, variance, écart-type (drill papier)
+======================================================================
+
+Énoncé : Echantillon [2, 4, 4, 4, 5, 5, 7, 9] (n=8). Calculer moyenne,
+         variance (échantillonnale, n-1), écart-type.
+Corrigé : Σ = 40 -> moyenne = 5
+          Σ(xi-5)² = 9+1+1+1+0+0+4+16 = 32
+          variance = 32/(8-1) = 32/7 ≈ 4.571
+          sd = √4.571 ≈ 2.138
+
+Vérif Python : moyenne=5.0, var=4.5714, sd=2.1381
+
+======================================================================
+C2 · Intervalle de confiance (drill papier)
+======================================================================
+
+Énoncé : n=25, xbar=10, s=2.5. IC95 pour μ (variance inconnue, t).
+Méthode : t0.975,24 ≈ 2.064
+          IC = xbar ± t·s/√n = 10 ± 2.064·2.5/5 = 10 ± 1.032
+          IC95 = [8.968, 11.032]
+
+Vérif Python : t=2.064, IC95=[8.968,11.032]
+
+======================================================================
+C3 · Test de deux moyennes (drill papier)
+======================================================================
+
+Énoncé : G1: n=30, xbar=52, s=5 ; G2: n=30, xbar=55, s=4.
+         H0: μ1=μ2 vs H1: μ1≠μ2. Test t à deux échantillons (α=0.05).
+Méthode : se = √(s1²/n1 + s2²/n2) = √(25/30 + 16/30) = √(41/30) ≈ 1.168
+          t = (55-52)/1.168 ≈ 2.568
+          df ≈ 58 -> tcrit ≈ 2.002
+          |t| > tcrit -> rejeter H0 (différence significative)
+
+Vérif Python : se=1.1690, t=2.5662, p=0.01289 -> rejet
+
+======================================================================
+C4 · Régression linéaire (drill papier)
+======================================================================
+
+Énoncé : Points (0,1),(1,2),(2,5),(3,4),(4,5). Trouver pente β,
+         ordonnée α, R².
+Corrigé : xbar=2, ybar=3.4
+          Sxx = Σ(x-xbar)² = 4+1+0+1+4 = 10
+          Sxy = Σ(x-xbar)(y-ybar) = (-2)(-2.4)+(-1)(-1.4)+0+1(0.6)+2(1.6)
+                = 4.8+1.4+0+0.6+3.2 = 10.0
+          β = Sxy/Sxx = 1.0
+          α = ybar - β·xbar = 3.4 - 2 = 1.4
+          Prédictions : 1.4, 2.4, 3.4, 4.4, 5.4
+          SSE = (1-1.4)²+(2-2.4)²+(5-3.4)²+(4-4.4)²+(5-5.4)²
+              = 0.16+0.16+2.56+0.16+0.16 = 3.2
+          SST = Σ(y-ybar)² = 5.76+1.96+2.56+0.36+2.56 = 13.2
+          R² = 1 - SSE/SST = 1 - 3.2/13.2 ≈ 0.7576
+
+Vérif Python : β=1.000, α=1.400, R²=0.7576
+
+======================================================================
+C5 · ANOVA (drill papier)
+======================================================================
+
+Énoncé : 3 groupes, n=4 chacun. G1=[2,3,2,3], G2=[4,5,4,4], G3=[5,6,5,4].
+         H0 : μ1=μ2=μ3. Calculer F et comparer à Fcrit(2,9)=4.256 (α=0.05).
+Méthode : moyennes : m1=2.5, m2=4.25, m3=5.0 ; moyenne globale=47/12≈3.9167
+          SSB = 4[(2.5-3.9167)² + (4.25-3.9167)² + (5-3.9167)²]
+              = 4[2.0069 + 0.1111 + 1.1736] = 4(3.2917) ≈ 13.167
+          SSW = Σ interne = G1:1.0 + G2:0.75 + G3:2.0 = 3.75
+          F = (SSB/2)/(SSW/9) = 6.583/0.4167 ≈ 15.80
+          Fcrit(2,9)=4.256 ;  15.80 > 4.256 -> rejeter H0 (groupes différents)
+
+Vérif Python : F=15.800, p=0.0011 -> rejet fort
+
+======================================================================
+C6 · Test du chi-deux (drill papier)
+======================================================================
+
+Énoncé : Tableau de contingence 2x2 :
+                Oui   Non
+          Hommes   30    20
+          Femmes   20    30
+          H0 : sexe indépendant de la réponse.
+Méthode : effectifs attendus = (lignetot*coltot)/total
+          E[1,1]=50*50/100=25, E[1,2]=25, E[2,1]=25, E[2,2]=25
+          chi2 = Σ (obs-att)²/att = 4*(25/25) = 4
+          df = (2-1)(2-1) = 1 ; chi2crit(0.05)=3.841
+          4 > 3.841 -> rejeter H0 (faiblement lié)
+
+Vérif Python : chi2=4.000, p=0.0455 (correction off)
+
+======================================================================
+SIMULATION BLANCHE (120 min)
+======================================================================
+
+Partie A (30 min) : 1 système linéaire + 1 déterm/inverse + 1 valeurs propres
+Partie B (30 min) : 1 gradient + 1 GD pas à pas + 1 bayes + 1 normale
+Partie C (60 min) : 1 IC + 1 test t + 1 régression complète + 1 ANOVA
+Conseils examen :
+  1. Écrire la méthode AVANT de calculer (barème sur la démarche).
+  2. Toujours vérifier (ex : A@x = b ; det(M)M^-1 = I ; R² ∈ [0,1]).
+  3. Ne pas sauter d'étapes : chaque ligne de calcul = 1/2 point potentiel.
+  4. Si bloqué : poser les équations, c'est déjà 30-40 % du point.
+
+
+Tous les drills de l'examen sont vérifiés. ✅
