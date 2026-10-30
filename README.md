@@ -5,8 +5,9 @@ Contenu en français ; sorties pré-exécutées dans les `.ipynb` (aucune instal
 
 ## Notebooks
 
-Chaque notebook T01–T07 est organisé en **7 points** numérotés, chacun avec son
-**exercice corrigé Pn** intégré. Voir le détail dans [`PLAN_NOTEBOOKS.md`](PLAN_NOTEBOOKS.md).
+Chaque notebook T01–T07 est organisé en **6 points-sujets** numérotés, chacun avec son
+**exercice corrigé Pn** intégré ; le **point 7** est réservé à la **synthèse globale**
+(tableau récapitulatif des 6 points + exemple intégrateur réutilisant tous les outils). Voir le détail dans [`PLAN_NOTEBOOKS.md`](PLAN_NOTEBOOKS.md).
 
 | # | Notebook | Contenu |
 |---|---|---|

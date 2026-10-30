@@ -16,20 +16,22 @@ descriptives, et savoir manipuler des tableaux numpy (`np.array`,
 (`File → Open notebook from → Google Drive`, dossier `EFREI/MATHS/notebooks`)
 ou JupyterLab local (`jupyter notebook notebooks/`).
 
-| Notebook | Contenu (7 points · MML book) |
+| Notebook | Contenu (6 points-sujets + synthèse · MML book) |
 |---|---|
-| `01_algebre_lineaire.ipynb` | T01 — 7 pts : opérations/systèmes, rang & bases, valeurs propres, SVD, PCA+eigendecompo+Cholesky *(ch. 4.3–4.4)*, PCA latente *(ch. 10.7)*, synthèse |
-| `02_geometrie_analytique.ipynb` | T02 — 7 pts : normes, produit scalaire/angle, projection, distances, Gram-Schmidt, similarité cosinus, synthèse |
-| `03_calcul_optimisation.ipynb` | T03 — 7 pts : dérivées/gradient, GD+convexité/Hessian, régression GD, logistique+Jacobien+backprop *(ch. 5.3–5.6)*, Hessian/Taylor/Newton *(ch. 5.7–5.8)*, Lagrange/KKT *(ch. 7.2)*, récap |
-| `04_probabilités.ipynb` | T04 — 7 pts : Kolmogorov, v.a. discrète/continue, lois usuelles, Bayes/test, Monte-Carlo+famille exponentielle *(ch. 6.6)*, changement de variable *(ch. 6.7)*, synthèse |
-| `05_modelisation_statistique.ipynb` | T05 — 7 pts : échantillonnage, TCL, estimation, IC, régression, corrélation/R², régression bayésienne *(ch. 9.3)* |
-| `06_tests_et_inference.ipynb` | T06 — 7 pts : paramétriques, non paramétriques, ANOVA+Tukey, chi², bayésien Bêta, théorie de décision, synthèse p-value |
-| `07_applications_datascience.ipynb` | T07 — 7 pts : pipeline end-to-end, k-fold/biais-variance, sur-apprentissage, métriques, biais & éthique, récap méthode, synthèse F1/AUC |
+| `01_algebre_lineaire.ipynb` | T01 — 6 pts + synthèse : opérations/systèmes, rang & bases, valeurs propres, SVD, PCA+eigendecompo+Cholesky *(ch. 4.3–4.4)*, PCA latente *(ch. 10.7)*, synthèse |
+| `02_geometrie_analytique.ipynb` | T02 — 6 pts + synthèse : normes, produit scalaire/angle, projection, distances, Gram-Schmidt, similarité cosinus, synthèse |
+| `03_calcul_optimisation.ipynb` | T03 — 6 pts + synthèse : dérivées/gradient, GD+convexité/Hessian, régression GD, logistique+Jacobien+backprop *(ch. 5.3–5.6)*, Hessian/Taylor/Newton *(ch. 5.7–5.8)*, Lagrange/KKT *(ch. 7.2)*, synthèse globale (tableau optimiseurs) |
+| `04_probabilités.ipynb` | T04 — 6 pts + synthèse : Kolmogorov, v.a. discrète/continue, lois usuelles, Bayes/test, Monte-Carlo+famille exponentielle *(ch. 6.6)*, changement de variable *(ch. 6.7)*, synthèse |
+| `05_modelisation_statistique.ipynb` | T05 — 6 pts + synthèse : échantillonnage, TCL, estimation, IC, régression + corrélation/R², régression bayésienne *(ch. 9.3)* |
+| `06_tests_et_inference.ipynb` | T06 — 6 pts + synthèse : paramétriques, non paramétriques, ANOVA+Tukey, chi², bayésien Bêta, théorie de décision, synthèse globale (lecture p-value) |
+| `07_applications_datascience.ipynb` | T07 — 6 pts + synthèse : pipeline end-to-end, k-fold/biais-variance, sur-apprentissage, métriques, biais & éthique, récap méthode, synthèse globale (exemple F1/AUC) |
 | `08_examen_preparation.ipynb` | 15 drills "papier" du DE avec corrigés pas-à-pas + vérification |
 | `09_graphiques.ipynb` | 8 figures pédagogiques inline (TCL, GD, PCA, lois, Bayes, IC, sur-appr., learning curves) |
 
-Chaque notebook T01–T07 comporte **7 points** numérotés `## 1 ·` … `## 7 ·`,
-chaque point n contenant son **exercice corrigé Pn** (bloc de code `# ---- Exercice Pn ----`).
+Chaque notebook T01–T07 comporte **6 points-sujets** numérotés `## 1 ·` … `## 6 ·`,
+chacun contenant son **exercice corrigé Pn** (bloc de code `# ---- Exercice Pn ----`).
+Le point `## 7 ·` est réservé à la **synthèse globale** : tableau récapitulatif des
+6 points + exemple intégrateur qui réutilise tous les outils du notebook.
 Les ajouts MML (livre Deisenroth/Faisal/Ong, `mml-book.com`) comblent les
 gaps entre le syllabus ADIF72 et le livre de référence : les points
 concernés sont signalés par un badge `*(MML ch. X.Y)*` dans les notebooks.
@@ -57,7 +59,7 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 4–5 : SVD, PCA/eigendecomposition/Cholesky *(MML ch. 4.3–4.4)*
 - 02:30–03:00 · Point 6 : PCA perspective variable latente *(MML ch. 10.7)*
 - 03:00–03:30 · Point 7 (synthèse) + drill papier A1/A2/A3 — *DE Partie A*
-> **Exercices P1–P7** : intégrés dans chaque point du notebook (à refaire sans regarder).
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook (à refaire sans regarder).
 
 ### S2 · T02 — Géométrie analytique
 **Objectifs :** normes, angles, projections, bases orthonormales, similarité.
@@ -66,7 +68,7 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 4–5 : distances, Gram-Schmidt (bases orthonormales)
 - 02:30–03:00 · Point 6 : similarité cosinus (recherche, embeddings) — lien SVD
 - 03:00–03:30 · Point 7 (synthèse distances/similarités) + drill papier A4/A5
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S3 · T03 — Calcul différentiel & optimisation
 **Objectifs :** dérivées/gradients, descente de gradient, convexité, Lagrange.
@@ -75,7 +77,7 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 4–5 : régression linéaire/logistique + Jacobien/backprop *(MML ch. 5.3–5.8)*
 - 02:30–03:00 · Point 6 : optimisation contrainte Lagrange/KKT *(MML ch. 7.2)*
 - 03:00–03:30 · Point 7 (récap "quel optimiseur") + drill papier B1/B2/B3
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S4 · T04 — Théorie des probabilités
 **Objectifs :** espaces probabilistes, v.a., lois usuelles, Bayes, incertitude.
@@ -84,16 +86,16 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 3–4 : lois usuelles, Bayes (paradoxe du taux de base)
 - 02:30–03:00 · Points 5–6 : Monte-Carlo/famille exponentielle *(MML ch. 6.6–6.7)*
 - 03:00–03:30 · Point 7 (synthèse) + drill papier B4/B5/B6 (Bayes, normale, binomiale)
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S5 · T05 — Modélisation statistique
 **Objectifs :** TCL, estimation (biais/variance), intervalles de confiance, régression.
 - 00:00–00:15 · D'une population à un échantillon
 - 00:15–01:30 · Points 1–3 : distribution d'échantillonnage, TCL, estimation
 - 01:30–02:30 · Points 4–5 : intervalles de confiance, régression linéaire
-- 02:30–03:00 · Point 6 : corrélation/R² + Point 7 : régression bayésienne *(MML ch. 9.3)*
+- 02:30–03:00 · Point 5 (fin) : corrélation/R² + Point 6 : régression bayésienne *(MML ch. 9.3)*
 - 03:00–03:30 · Drill papier C1/C2/C4 (moyenne/var, IC, régression + R²)
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S6 · T06 — Inférence & tests
 **Objectifs :** tests paramétriques/non paramétriques, ANOVA, chi², décision.
@@ -102,7 +104,7 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 4–5 : chi² indépendance, statistique bayésienne Bêta
 - 02:30–03:00 · Points 6–7 : théorie de décision + synthèse "lecture d'une p-value"
 - 03:00–03:30 · Drill papier C3/C5/C6 (test t, ANOVA F, chi²)
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S7 · T07 — Applications en science des données
 **Objectifs :** pipeline, validation, biais-variance, métriques, éthique.
@@ -111,7 +113,7 @@ Rythme interne type (à adapter selon le topic) :
 - 01:30–02:30 · Points 4–5 : métriques de classification, biais & éthique
 - 02:30–03:00 · Points 6–7 : tableau récap "quelle méthode" + synthèse F1/AUC
 - 03:00–03:30 · Revue transversale : relier SVD→PCA→corrélation→tests ; préparer le TD (40 %)
-> **Exercices P1–P7** : intégrés dans chaque point du notebook.
+> **Exercices P1–P6 + l'exercice de la synthèse globale** : intégrés dans chaque point du notebook.
 
 ### S8 · Préparation examen (DE + TD)
 **Objectifs :** consolider, s'entraîner au papier, simuler.
