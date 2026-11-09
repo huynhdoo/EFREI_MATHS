@@ -31,6 +31,12 @@ Chaque notebook T01–T07 est organisé en **6 points-sujets** numérotés, chac
 > *Note : le livre MML (Deisenroth/Faisal/Ong) n'est pas inclus (droit d'auteur) ;*
 > *il est référencé dans les notebooks par ses chapitres (`*(MML ch. X.Y)*`).*
 
+## Supports de séance (`slides/`)
+
+| Fichier | Contenu |
+|---|---|
+| `EFREI - MATHS.pptx` | Déroulé des 8 séances + programme indicatif des TD T01–T07 (tableaux séances / points à aborder) |
+
 ## Exécuter
 
 - **Local** : `jupyter notebook notebooks/`

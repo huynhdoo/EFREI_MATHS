@@ -49,7 +49,8 @@ Rythme interne type (à adapter selon le topic) :
 - **03:00–03:30** (30 min) — drill papier (type DE) + auto-évaluation
 
 > Matériel par séquence : 1 notebook (`notebooks/`) + 1 script (`code/`) du même
-> numéro, exécutés ensemble. Les sections signalées `*(MML ch. X.Y)*` correspondent
+> numéro, exécutés ensemble. Support de séance (déroulé + programme indicatif) :
+> `slides/EFREI - MATHS.pptx`. Les sections signalées `*(MML ch. X.Y)*` correspondent
 > au bloc de 45 min.
 
 ### S1 · T01 — Algèbre linéaire
